@@ -17,7 +17,7 @@ Quy trình được thiết kế tuần tự để đảm bảo tính toàn vẹ
     * **Preprocessing:** Ghép bảng (Merge), xử lý dữ liệu thiếu (Missing values), và chuẩn hóa tên sản phẩm.
     * **Transformation:** Chuyển đổi dữ liệu hóa đơn sang dạng **Ma trận giao dịch** (Transaction Matrix).
     * **Mining Engine:** Sử dụng thư viện `mlxtend` để chạy thuật toán tìm luật kết hợp, tính toán các chỉ số quan trọng: *Support, Confidence, Lift*.
-    * **Export:** Xuất các file dữ liệu sạch và file luật (`.csv`) vào thư mục `DataAfterPreprocessing/`.
+    * **Export:** Xuất các file dữ liệu sạch và giàu thông tin (`.csv`) vào thư mục `DataAfterPreprocessing/`.
 
 3.  **Analytics (`Statistics.ipynb`):**
     * Đọc dữ liệu đầu ra từ bước trên.
@@ -36,8 +36,9 @@ Quy trình được thiết kế tuần tự để đảm bảo tính toàn vẹ
 * **File:** `src/DataProcessing.ipynb`
 * **Chức năng chính:**
     * Clean và Merge dữ liệu sản phẩm.
-    * Tạo file `item_rules.csv` (Gợi ý sản phẩm cụ thể).
-    * Tạo file `category_rules.csv` (Gợi ý chéo danh mục, ví dụ: *Mua Tã -> Mua Sữa*).
+    * Tạo file `products_enriched.csv`
+    * Tạo file `transactions_long.csv`
+    * Tạo file `unknown_barcodes.csv`
 * **Output:** Toàn bộ file kết quả sẽ được lưu trong folder `DataAfterPreprocessing/`.
 
 ### Bước 2: Phân tích thống kê (EDA)
@@ -86,9 +87,8 @@ preprocessing-and-statistics/
 │
 ├── DataAfterPreprocessing/           # Output: Cleaned Data for Modeling
 │   ├── .gitkeep
-│   ├── category_rules.csv            # Generated Cross-category rules
-│   ├── item_rules.csv                # Generated Item-Item rules
-│   ├── products_final.csv            # Final Master Product Data
+│   ├── products_enriched.csv         # Final Master Product Data
+│   ├── unknown_barcodes.csv          # Categorize products with unidentified barcodes in the transaction
 │   └── transactions_long.csv         # User-Item Transaction History
 │
 ├── src/                              # Source Code
