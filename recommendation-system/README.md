@@ -8,29 +8,29 @@
 
 ---
 
-## CORE INNOVATION: LLM FEATURE EXTRACTION
+## Core Innovation: LLM Feature Extraction
 
 Thay vì chỉ xử lý dữ liệu thô, project tập trung vào việc trích xuất đặc trưng ngữ nghĩa từ câu hỏi của người dùng:
 
-1.  **PHÂN TÍCH NGỮ NGHĨA:** Hiểu sâu các yêu cầu mang tính cảm tính (Ví dụ câu prompt của người dùng: *"Muốn nấu canh chua cho gia đình 4 người ăn thì cần mua những gì?"*).
-2.  **TRÍCH XUẤT ĐẶC TRƯNG (KEYWORD EXTRACTION):** Tự động bóc tách Key-features như: Chủng loại, hương vị, thương hiệu, mục đích sử dụng.
-3.  **LÀM GIÀU ĐẦU VÀO (INPUT ENRICHMENT):** Sử dụng các từ khóa đã trích xuất để làm mượt dữ liệu đầu vào, giúp bộ lọc Content-based đạt độ chính xác tối ưu.
+1.  **Phân tích ngữ nghĩa:** Hiểu sâu các yêu cầu mang tính cảm tính (Ví dụ câu prompt của người dùng: *"Muốn nấu canh chua cho gia đình 4 người ăn thì cần mua những gì?"*).
+2.  **Trích xuất đặc trưng (Keyword Extraction):** Tự động bóc tách Key-features như: Chủng loại, hương vị, thương hiệu, mục đích sử dụng.
+3.  **Làm giàu thông tin đầu vào (Input Enrichment):** Sử dụng các từ khóa đã trích xuất để làm mượt dữ liệu đầu vào, giúp bộ lọc Content-based đạt độ chính xác tối ưu.
 
 ---
 
-## WORKFLOW PIPELINE
+## Workflow Pipeline
 
 Quy trình vận hành được thiết kế theo tư duy **"Hybrid-First"** và **"Safe-Failure"**:
 
-* **USER INPUT:** Tiếp nhận yêu cầu dạng văn bản tự do.
-* **LLM ENGINE:** Gọi API Gemini để xử lý. Nếu thành công, sử dụng Keyword trích xuất.
-* **FALLBACK MECHANISM:** Nếu API lỗi hoặc Timeout, hệ thống tự động chuyển sang **Traditional Path** sử dụng dữ liệu thô từ lịch sử và thuộc tính cứng.
-* **RECOMMENDATION ENGINE:** Chạy song song Content-based (TF-IDF) và Rule-based (Association Rules).
-* **RANKING:** Sắp xếp sản phẩm theo độ tương đồng và chỉ số phổ biến (Popularity).
+* **User Input:** Tiếp nhận yêu cầu dạng văn bản tự do.
+* **LLM Engine:** Gọi API Gemini để xử lý. Nếu thành công, sử dụng Keyword trích xuất.
+* **Fallback Mechanism:** Nếu API lỗi hoặc Timeout, hệ thống tự động chuyển sang **Traditional Path** sử dụng dữ liệu thô từ lịch sử và thuộc tính cứng.
+* **Recommendation Engine:** Chạy song song Content-based (TF-IDF) và Rule-based (Association Rules).
+* **Ranking:** Sắp xếp sản phẩm theo độ tương đồng và chỉ số phổ biến (Popularity).
 
 ---
 
-## KEY METRICS & EVALUATION
+## Key Metrics & Evaluation
 
 Hệ thống được đo lường khắt khe qua bộ chỉ số tiêu chuẩn của hệ thống khuyến nghị hiện đại:
 
@@ -43,7 +43,7 @@ Hệ thống được đo lường khắt khe qua bộ chỉ số tiêu chuẩn 
 
 ---
 
-## USAGE GUIDE
+## Usage Guide
 
 ### BƯỚC 1: BASELINE & TRADITIONAL HYBRID
 * **File:** `src/TraditionalRecommendation.ipynb`
@@ -57,7 +57,7 @@ Hệ thống được đo lường khắt khe qua bộ chỉ số tiêu chuẩn 
 
 ---
 
-## TECH STACK
+## Tech Stack
 
 * **LLM ENGINE:** `Google Gemini API` (Generative AI).
 * **VECTORIZATION:** `TfidfVectorizer` (Scikit-learn).
@@ -67,7 +67,7 @@ Hệ thống được đo lường khắt khe qua bộ chỉ số tiêu chuẩn 
 
 ---
 
-## PROJECT STRUCTURE
+## Project Structure
 
 ```text
 Recommendation-Systems/
